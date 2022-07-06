@@ -252,7 +252,7 @@ namespace toolbar
         #endregion
 
         private System.Windows.Forms.ProgressBar progressBar1;
-        private DateTime dtBaslangic;
+        private System.Windows.Forms.DateTimePicker dtBaslangic;
         private System.Windows.Forms.DateTimePicker dtBitis;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
