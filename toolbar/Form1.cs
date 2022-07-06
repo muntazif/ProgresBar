@@ -26,13 +26,13 @@ namespace toolbar
         int gün = 0;
         public void btnHesapla_Click(object sender, EventArgs e)
         {
-            int baslangic = dtBaslangic.Date.DayOfYear;
+            int baslangic = dtBaslangic.Value.DayOfYear;
             int bitis = dtBitis.Value.DayOfYear;
             int cnt=0;
 
-            for (int k = baslangic; k < bitis+(dtBitis.Value.Year-dtBaslangic.Date.Year)*365; k++)
+            for (int k = baslangic; k < bitis+(dtBitis.Value.Year-dtBaslangic.Value.Year)*365; k++)
             {
-                DayOfWeek dayOfWeek = new DateTime(dtBaslangic.Date.Year, 1, 1).AddDays(k - 1).DayOfWeek;
+                DayOfWeek dayOfWeek = new DateTime(dtBaslangic.Value.Year, 1, 1).AddDays(k - 1).DayOfWeek;
 
                 if (dayOfWeek == DayOfWeek.Saturday || dayOfWeek == DayOfWeek.Sunday)  
                 {
@@ -43,7 +43,7 @@ namespace toolbar
                     cnt++;
                 }
             }
-            Console.WriteLine(dtBaslangic.Date.Year + " " + cnt);
+            Console.WriteLine(dtBaslangic.Value.Year + " " + cnt);
 
             dateTimeSettings(baslangic, DateTime.Now, bitis);
 
